@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Happy Birthday, Dada</title>
+<title>Happy Birthday, Mr. Polar</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#f9e9e3; --bg2:#efc8bb; --ink:#43251c; --soft:#8a5645; --card:#fdf4f0;
@@ -18,27 +20,51 @@
 :root[data-theme="dark"]{--bg:#2b1812; --bg2:#3d2119; --ink:#f7e1d9; --soft:#d9a898; --card:#38201a;}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--serif);
-  background:radial-gradient(120% 90% at 50% 0%,var(--bg) 40%,var(--bg2) 100%) fixed;overflow-x:hidden}
+body{
+  margin:0;min-height:100vh;color:var(--ink);font-family:var(--serif);
+  background:radial-gradient(120% 90% at 50% 0%,var(--bg) 40%,var(--bg2) 100%) fixed;
+  overflow-x:hidden
+}
 #sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
-.balloon{position:absolute;top:var(--t);right:var(--x);width:var(--s);height:calc(var(--s)*1.22);border-radius:50%;
-  background:var(--c);opacity:.92;
-  animation:bob var(--d) ease-in-out var(--delay) infinite alternate;pointer-events:auto;cursor:pointer}
-.balloon::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:60px;background:var(--soft);opacity:.4;
-  transform-origin:top;animation:sway 3s ease-in-out infinite alternate}
+.balloon{
+  position:absolute;top:var(--t);right:var(--x);width:var(--s);height:calc(var(--s)*1.22);
+  border-radius:50%;background:var(--c);opacity:.92;
+  animation:bob var(--d) ease-in-out var(--delay) infinite alternate;
+  pointer-events:auto;cursor:pointer
+}
+.balloon::after{
+  content:"";position:absolute;left:50%;top:100%;width:1px;height:60px;
+  background:var(--soft);opacity:.4;transform-origin:top;
+  animation:sway 3s ease-in-out infinite alternate
+}
 .balloon.pop{animation:none;transform:scale(1.5);opacity:0;transition:.25s}
-@keyframes bob{from{transform:translateY(0) rotate(-3deg)}to{transform:translateY(14px) rotate(3deg)}}
-@keyframes sway{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
-
-.flower{position:absolute;top:var(--t);right:var(--x);width:var(--s);height:var(--s);animation:spin 40s linear infinite;opacity:.92}
-.flower i{position:absolute;left:38%;top:2%;width:24%;height:44%;background:var(--c);border-radius:50%;
-  transform-origin:50% 100%;transform:rotate(calc(var(--r)*72deg)) translateY(-6%)}
-.flower b{position:absolute;left:39%;top:39%;width:22%;height:22%;border-radius:50%;background:var(--wine)}
+@keyframes bob{
+  from{transform:translateY(0) rotate(-3deg)}
+  to{transform:translateY(14px) rotate(3deg)}
+}
+@keyframes sway{
+  from{transform:rotate(-6deg)}
+  to{transform:rotate(6deg)}
+}
+.flower{
+  position:absolute;top:var(--t);right:var(--x);width:var(--s);height:var(--s);
+  animation:spin 40s linear infinite;opacity:.92
+}
+.flower i{
+  position:absolute;left:38%;top:2%;width:24%;height:44%;
+  background:var(--c);border-radius:50%;
+  transform-origin:50% 100%;transform:rotate(calc(var(--r)*72deg)) translateY(-6%)
+}
+.flower b{
+  position:absolute;left:39%;top:39%;width:22%;height:22%;
+  border-radius:50%;background:var(--wine)
+}
 @keyframes spin{to{transform:rotate(360deg)}}
+
 .cake-container{
   position:fixed;left:4%;top:50%;transform:translateY(-50%);
   width:140px;height:160px;z-index:2;pointer-events:none;
-  animation:cakeFloat 4s ease-in-out infinite alternate;
+  animation:cakeFloat 4s ease-in-out infinite alternate
 }
 @keyframes cakeFloat{
   0%{transform:translateY(-50%) translateY(0px) rotate(-1deg)}
@@ -46,213 +72,289 @@ body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--serif);
 }
 .cake-plate{
   position:absolute;bottom:0;left:5%;width:90%;height:10px;
-  background:var(--rose);border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.15);
+  background:var(--rose);border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15)
 }
 .cake-bottom{
   position:absolute;bottom:10px;left:15%;width:70%;height:45px;
-  background:var(--peach);border-radius:8px 8px 4px 4px;box-shadow:inset 0 -8px 0 var(--wine);
+  background:var(--peach);border-radius:8px 8px 4px 4px;
+  box-shadow:inset 0 -8px 0 var(--wine)
 }
 .cake-top{
   position:absolute;bottom:55px;left:25%;width:50%;height:38px;
-  background:var(--gold);border-radius:8px 8px 4px 4px;box-shadow:inset 0 -6px 0 var(--wine);
+  background:var(--gold);border-radius:8px 8px 4px 4px;
+  box-shadow:inset 0 -6px 0 var(--wine)
 }
 .cake-icing{
   position:absolute;top:0;left:0;width:100%;height:12px;
-  background:var(--card);border-radius:8px 8px 10px 10px;
+  background:var(--card);border-radius:8px 8px 10px 10px
 }
 .candles-row{
   position:absolute;bottom:93px;left:50%;transform:translateX(-50%);
-  display:flex;gap:10px;z-index:3;
+  display:flex;gap:10px;z-index:3
 }
 .candle{
   width:6px;height:24px;
-  background:repeating-linear-gradient(45deg, #fff, #fff 4px, var(--wine) 4px, var(--wine) 8px);
-  border-radius:3px 3px 0 0;position:relative;
+  background:repeating-linear-gradient(45deg,#fff,#fff 4px,var(--wine) 4px,var(--wine) 8px);
+  border-radius:3px 3px 0 0;position:relative
 }
 .flame{
   position:absolute;top:-11px;left:50%;transform:translateX(-50%);
   width:9px;height:13px;background:#ffb703;border-radius:50% 50% 35% 35%;
-  box-shadow:0 0 8px #ffb703, 0 0 16px #fb8500;
-  animation:flicker 0.8s ease-in-out infinite alternate;
+  box-shadow:0 0 8px #ffb703,0 0 16px #fb8500;
+  animation:flicker 0.8s ease-in-out infinite alternate
 }
 @keyframes flicker{
-  0%{transform:translateX(-50%) scale(1) rotate(-2deg);opacity:0.95;}
-  100%{transform:translateX(-50%) scale(1.18) rotate(2deg);opacity:1;}
+  0%{transform:translateX(-50%) scale(1) rotate(-2deg);opacity:0.95}
+  100%{transform:translateX(-50%) scale(1.18) rotate(2deg);opacity:1}
 }
 .firework-spark{
   position:absolute;width:5px;height:5px;border-radius:50%;
-  background:#ffb703;box-shadow:0 0 8px #ffb703, 0 0 15px #e9b7ab;
-  animation:burst 1.4s ease-out infinite;pointer-events:none;
+  background:#ffb703;box-shadow:0 0 8px #ffb703,0 0 15px #e9b7ab;
+  animation:burst 1.4s ease-out infinite;pointer-events:none
 }
-.firework-spark.fs1{top:-22px;left:20px;animation-delay:0s;}
-.firework-spark.fs2{top:-38px;right:25px;animation-delay:0.4s;background:#e9b7ab;box-shadow:0 0 8px #e9b7ab;}
-.firework-spark.fs3{top:-12px;right:-10px;animation-delay:0.8s;background:#b85c3a;}
+.firework-spark.fs1{top:-22px;left:20px;animation-delay:0s}
+.firework-spark.fs2{
+  top:-38px;right:25px;animation-delay:0.4s;
+  background:#e9b7ab;box-shadow:0 0 8px #e9b7ab
+}
+.firework-spark.fs3{
+  top:-12px;right:-10px;animation-delay:0.8s;background:#b85c3a
+}
 @keyframes burst{
-  0%{transform:scale(0.3);opacity:1;}
-  50%{transform:scale(1.6);opacity:0.8;}
-  100%{transform:scale(2.4);opacity:0;}
+  0%{transform:scale(0.3);opacity:1}
+  50%{transform:scale(1.6);opacity:0.8}
+  100%{transform:scale(2.4);opacity:0}
 }
 
-@media (max-width: 850px){
-  .cake-container{position:relative;left:auto;top:auto;transform:none;margin:0 auto 20px;animation:cakeFloatMobile 4s ease-in-out infinite alternate;}
-  @keyframes cakeFloatMobile{0%{transform:translateY(0)}100%{transform:translateY(-10px)}}
+@media (max-width:850px){
+  .cake-container{
+    position:relative;left:auto;top:auto;transform:none;
+    margin:0 auto 20px;
+    animation:cakeFloatMobile 4s ease-in-out infinite alternate
+  }
+  @keyframes cakeFloatMobile{
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-10px)}
+  }
 }
 
-main{position:relative;z-index:2;min-height:100vh;display:grid;place-items:center;padding:84px 16px 32px}
+main{
+  position:relative;z-index:2;min-height:100vh;
+  display:grid;place-items:center;padding:84px 16px 32px
+}
 .intro{text-align:center;max-width:560px;transition:opacity .6s,transform .6s}
-.intro.gone{opacity:0;transform:scale(.96);pointer-events:none;position:absolute}
-.intro h1{font-weight:500;font-size:clamp(2.6rem,10vw,5rem);line-height:1.02;margin:0 0 14px;letter-spacing:-.02em}
+.intro.gone{
+  opacity:0;transform:scale(.96);pointer-events:none;position:absolute
+}
+.intro h1{
+  font-weight:500;font-size:clamp(2.6rem,10vw,5rem);
+  line-height:1.02;margin:0 0 14px;letter-spacing:-.02em
+}
 .intro h1 em{font-style:italic;color:var(--wine)}
-.intro p{font-family:var(--hand);font-size:1.7rem;color:var(--soft);margin:0 0 30px}
-button{font:inherit;font-size:1.05rem;letter-spacing:.02em;color:#fff;background:var(--peach);border:0;border-radius:3px;
-  padding:15px 34px;cursor:pointer;box-shadow:0 8px 0 -4px var(--wine);transition:transform .2s,background .2s}
+.intro p{
+  font-family:var(--hand);font-size:1.7rem;
+  color:var(--soft);margin:0 0 30px
+}
+button{
+  font:inherit;font-size:1.05rem;letter-spacing:.02em;color:#fff;
+  background:var(--peach);border:0;border-radius:3px;
+  padding:15px 34px;cursor:pointer;
+  box-shadow:0 8px 0 -4px var(--wine);
+  transition:transform .2s,background .2s
+}
 button:hover{transform:translateY(-2px);background:var(--wine)}
 button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
 .letter{
-  display:none;
-  width:min(660px,100%);
-  background-color: #d69c4b;
-  /* background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.5) 0%, rgba(0,0,0,0.04) 100%), linear-gradient(135deg, #fdf6ec 0%, #f5e3cc 50%, #edd3b1 100%); */
-  border-radius: 12px;
-  padding: clamp(30px, 6vw, 52px);
-  box-shadow: 0 30px 70px -20px rgba(67, 37, 28, 0.4), inset 0 0 50px rgba(184, 92, 58, 0.12);
-  border: 3px solid #d4b595;
-  position: relative;
-  transform-origin: top center;
+  display:none;width:min(660px,100%);
+  background-color:#d69c4b;
+  border-radius:12px;
+  padding:clamp(30px,6vw,52px);
+  box-shadow:0 30px 70px -20px rgba(67,37,28,0.4),inset 0 0 50px rgba(184,92,58,0.12);
+  border:3px solid #d4b595;
+  position:relative;transform-origin:top center
 }
 .letter.show{
   display:block;
-  animation: openScroll 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation:openScroll 0.85s cubic-bezier(0.175,0.885,0.32,1.275) both
 }
 @keyframes openScroll{
-  0%{ opacity: 0; transform: translateY(50px) scale(0.8) rotateX(15deg); }
-  60%{ opacity: 1; transform: translateY(-8px) scale(1.02); }
-  100%{ opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); }
+  0%{opacity:0;transform:translateY(50px) scale(0.8) rotateX(15deg)}
+  60%{opacity:1;transform:translateY(-8px) scale(1.02)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotateX(0deg)}
 }
-
 .letter h2{
-  font-family:var(--hand);
-  font-weight:700;
+  font-family:var(--hand);font-weight:700;
   font-size:clamp(2.4rem,8vw,3.4rem);
-  margin:0 0 18px;
-  color:#361911;
-  line-height:1;
-  text-shadow: 0.5px 0.5px 1px rgba(54, 25, 17, 0.2);
+  margin:0 0 18px;color:#361911;line-height:1;
+  text-shadow:0.5px 0.5px 1px rgba(54,25,17,0.2)
 }
-
 .letter p{
-  font-family: var(--hand);
-  font-weight: 600;
-  font-size: 1.32rem;
-  line-height: 1.65;
-  margin: 0 0 18px;
-  max-width: 60ch;
-  color: #361911;
-  text-shadow: 0.5px 0.5px 0.5px rgba(54, 25, 17, 0.15);
+  font-family:var(--hand);font-weight:600;
+  font-size:1.32rem;line-height:1.65;
+  margin:0 0 18px;max-width:60ch;color:#361911;
+  text-shadow:0.5px 0.5px 0.5px rgba(54,25,17,0.15)
 }
-
 .letter .sign{
-  font-family:var(--hand);
-  font-weight:700;
-  font-size:2rem;
-  color:#361911;
-  margin:28px 0 16px;
-  line-height:1.2;
+  font-family:var(--hand);font-weight:700;
+  font-size:2rem;color:#361911;
+  margin:28px 0 16px;line-height:1.2
 }
-.letter .sign small{display:block;font-size:1.3rem;color:var(--soft);font-weight:600;}
-
+.letter .sign small{
+  display:block;font-size:1.3rem;
+  color:var(--soft);font-weight:600
+}
 .close-btn{
-  margin-top: 10px; background: var(--soft); font-size: 0.95rem; padding: 10px 22px;
-  box-shadow: 0 5px 0 -3px var(--wine);
+  margin-top:10px;background:var(--soft);
+  font-size:0.95rem;padding:10px 22px;
+  box-shadow:0 5px 0 -3px var(--wine)
 }
-.close-btn:hover{background: var(--wine);}
-
+.close-btn:hover{background:var(--wine)}
 .heart{display:inline-block;animation:beat 1.4s ease-in-out infinite}
-@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
-@media (prefers-reduced-motion:reduce){.balloon,.flower,.heart,.balloon::after,.flame,.firework-spark,.cake-container{animation:none!important}.letter.show{animation:none}}
+@keyframes beat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.25)}
+}
+@media (prefers-reduced-motion:reduce){
+  .balloon,.flower,.heart,.balloon::after,.flame,.firework-spark,.cake-container{animation:none!important}
+  .letter.show{animation:none}
+}
 html{-webkit-text-size-adjust:100%}
 button{min-height:48px}
-@media (max-width:480px){.intro p{font-size:1.45rem}}
+@media (max-width:480px){
+  .intro p{font-size:1.45rem}
+}
 </style>
 </head>
+
 <body>
+
 <div id="sky" aria-hidden="true"></div>
+
 <div class="cake-container" aria-hidden="true">
   <div class="candles-row">
-    <div class="candle"><div class="flame" style="animation-delay: 0s;"></div></div>
-    <div class="candle"><div class="flame" style="animation-delay: 0.3s;"></div></div>
-    <div class="candle"><div class="flame" style="animation-delay: 0.6s;"></div></div>
+    <div class="candle"><div class="flame" style="animation-delay:0s;"></div></div>
+    <div class="candle"><div class="flame" style="animation-delay:0.3s;"></div></div>
+    <div class="candle"><div class="flame" style="animation-delay:0.6s;"></div></div>
   </div>
+
   <div class="cake-top"><div class="cake-icing"></div></div>
   <div class="cake-bottom"><div class="cake-icing"></div></div>
   <div class="cake-plate"></div>
+
   <div class="firework-spark fs1"></div>
   <div class="firework-spark fs2"></div>
   <div class="firework-spark fs3"></div>
 </div>
 
 <main>
+
   <section class="intro" id="intro">
-    <h1>Happy birthday, <em>Dada</em></h1>
+    <h1>Happy birthday, <em>Mr. Polar</em></h1>
     <p>a special day!!!</p>
     <button id="open">OPEN</button>
   </section>
 
   <article class="letter" id="letter">
-    <h2>Happiest birthday dada <span class="heart">♥</span></h2>
-    <p>Lotss of loveee. May your dreams be fulfilled. I’m soo sorry for late wish. Tapai ko birthday ko din mero exam chali rako thyo so i really couldn’t wish you tho i really wanted to. Jati j vayeni your bunu forever lovess you. You’re da bestt. I am reallky grateful to have someone like u in ma life. I wish you always succeed, be happy and never forget your bunu when things are hard.</p>
-    <p>May your life be blessed with beautiful things. I couldn’t love another guy more than you. Aru bela ma vandina but genuinely you’re such a good guy, and you’re good-looking tbh. Last ma this Krija wouldn’t be here with your love, support and blessings. Tapai lai maile jati badar vanepani my heart forever lies with you mero pyaro dada.</p>
-    <p class="sign"><small>From:</small>your pyaro nani</p>
+
+    <h2>Dearest Mr. Polar <span class="heart">♥</span></h2>
+
+    <p>
+      Happiest birthday polarr. I never knew someone whom I barely knew last year would be really important to me this year. I wish you all the happiness, joy and never ending success. May your dreams be fulfilled, days brighten with smile. Your putki loves ya and will forever hold ya in ma heart. YOU ARE A BROTHER BY CHOICE. I would forever look at you like my own lil brother. You are sucha good person and deserve all the happiness in the world.
+    </p>
+
+    <p class="sign">
+      <small>xo,</small>
+      Yours,<br>
+      Putki
+    </p>
+
     <button class="close-btn" id="close">Close letter</button>
+
   </article>
+
 </main>
 
 <script>
 (function(){
+
   var sky=document.getElementById('sky');
   var cols=['#c4694a','#e9b7ab','#b85c3a','#f0cfc5','#d98a6c','#a24526'];
   var petals=['#e9b7ab','#c4694a','#f3cfc4','#d98a6c'];
-  
+
   [
-    [14, 16, 34, 0, 3.4],
-    [30, 52, 28, 1, 4.2],
-    [10, 84, 24, 3, 3.8],
-    [60, 120, 32, 2, 3.6],
-    [20, 160, 30, 4, 4.0],
-    [80, 200, 26, 5, 3.2]
+    [14,16,34,0,3.4],
+    [30,52,28,1,4.2],
+    [10,84,24,3,3.8],
+    [60,120,32,2,3.6],
+    [20,160,30,4,4.0],
+    [80,200,26,5,3.2]
   ].forEach(function(p){
-    var b=document.createElement('div');b.className='balloon';
-    b.style.cssText='--t:'+p[0]+'px;--x:'+p[1]+'px;--s:'+p[2]+'px;--c:'+cols[p[3]]+';--d:'+p[4]+'s;--delay:-'+p[4]/2+'s';
-    b.addEventListener('click',function(){var e=this;e.classList.add('pop');setTimeout(function(){e.remove()},300)});
+
+    var b=document.createElement('div');
+    b.className='balloon';
+
+    b.style.cssText=
+      '--t:'+p[0]+'px;--x:'+p[1]+'px;--s:'+p[2]+'px;--c:'+cols[p[3]]+';--d:'+p[4]+'s;--delay:-'+p[4]/2+'s';
+
+    b.addEventListener('click',function(){
+      var e=this;
+      e.classList.add('pop');
+      setTimeout(function(){e.remove()},300);
+    });
+
     sky.appendChild(b);
+
   });
 
   [
-    [132, 22, 26],
-    [158, 62, 20],
-    [190, 110, 24],
-    [220, 150, 22]
+    [132,22,26],
+    [158,62,20],
+    [190,110,24],
+    [220,150,22]
   ].forEach(function(p,i){
-    var f=document.createElement('div');f.className='flower';
-    f.style.cssText='--t:'+p[0]+'px;--x:'+p[1]+'px;--s:'+p[2]+'px;--c:'+petals[i % petals.length];
-    var h='';for(var k=0;k<5;k++)h+='<i style="--r:'+k+'"></i>';
-    f.innerHTML=h+'<b></b>';sky.appendChild(f);
+
+    var f=document.createElement('div');
+    f.className='flower';
+
+    f.style.cssText=
+      '--t:'+p[0]+'px;--x:'+p[1]+'px;--s:'+p[2]+'px;--c:'+petals[i%petals.length];
+
+    var h='';
+
+    for(var k=0;k<5;k++){
+      h+='<i style="--r:'+k+'"></i>';
+    }
+
+    f.innerHTML=h+'<b></b>';
+    sky.appendChild(f);
+
   });
 
   document.getElementById('open').addEventListener('click',function(){
+
     document.getElementById('intro').classList.add('gone');
+
     setTimeout(function(){
+
       document.getElementById('letter').classList.add('show');
       window.scrollTo({top:0,behavior:'smooth'});
+
     },450);
+
   });
 
   document.getElementById('close').addEventListener('click',function(){
+
     document.getElementById('letter').classList.remove('show');
     document.getElementById('intro').classList.remove('gone');
     window.scrollTo({top:0,behavior:'smooth'});
+
   });
+
 })();
 </script>
+
 </body>
 </html>
